@@ -20,7 +20,7 @@
     "Contenu": {
       "type": "blocks"
     },
-    "Illustration": {
+    "Image": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
@@ -29,6 +29,9 @@
         "videos",
         "audios"
       ]
+    },
+    "Date": {
+      "type": "string"
     }
   }
 }
