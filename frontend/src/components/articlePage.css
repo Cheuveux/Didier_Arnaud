@@ -1,0 +1,58 @@
+.article_page {
+  max-width: 750px;
+  width: 95vw;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.back_link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: grey;
+  font-weight: 600;
+}
+
+.back_link:hover {
+  color: black;
+}
+
+.article_page_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid grey;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.article_page_title {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.article_page_date {
+  color: grey;
+  font-size: 0.9rem;
+}
+
+.article_page_img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.article_page_desc {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid grey;
+  padding-left: 1rem;
+}
+
+.article_page_contenu p {
+  text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}

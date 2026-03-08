@@ -49,7 +49,7 @@ export default function Article()
 					className="img_article_desc"
 					src={post.Image?.[0]?.url ? `http://localhost:1337${post.Image[0].url}` : null}
 					alt={post.Titre}/>
-					<p className="article_desc_content">{post.Description}</p>
+					<p className="text_article_desc">{post.Description}</p>
 				</div>
 				</div>
 			</div>

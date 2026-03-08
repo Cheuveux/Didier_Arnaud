@@ -5,13 +5,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 10rem;
   
 }
 
 .article_card {
   width: 700px;
   max-width: 95vw;
-  
   /* background: transparent; */
   position: relative;
   z-index: 1;
@@ -30,10 +30,12 @@
 	justify-content: space-between;
 	padding: .5rem;
 }
-
+.article_title {
+	font-size: 2rem;
+}
 .article_desc {
 	display: flex;
-	margin: 1rem;
+	margin: 0.5rem 1rem;
 	gap: 1rem;
 }
 .img_article_desc {
@@ -41,5 +43,13 @@
 	width: 250px;
 	height: auto;
 	border-radius: 2px;
+}
+
+.text_article_desc{
+	text-align: justify;
+	font-weight: 600;
+	padding: 0.25rem;
+	border-top: grey 1px solid;
+	border-bottom: grey 1px solid ;
 }
 
