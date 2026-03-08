@@ -5,14 +5,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 8rem;
   
 }
 
 .article_card {
   width: 700px;
   max-width: 95vw;
-  /* background: transparent; */
   position: relative;
   z-index: 1;
   overflow: visible;
@@ -23,6 +22,20 @@
   text-decoration: none;
   color: rgb(14, 13, 13);
 
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.35s ease, background-color 0.35s ease;
+  will-change: transform;
+  cursor: pointer;
+
+}
+
+.article_card:hover {
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.11),
+    0 20px 48px rgba(0, 0, 0, 0.08);
+  background-color: rgba(153, 145, 145, 0.5);
 }
 
 .article_header {

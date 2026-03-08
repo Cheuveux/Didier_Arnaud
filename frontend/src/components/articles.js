@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
 import './articles.css';
 
 export default function Article()
@@ -7,6 +8,28 @@ export default function Article()
 	const [isLoading, setIsLoading] = useState(true);
 	const [posts, setPosts] = useState([]);
 	const [error, setError] = useState(null);
+	const cardRefs = useRef([]);
+
+	// GSAP hover animations
+	useEffect(() => {
+		const cards = cardRefs.current;
+		const cleanups = cards.map((card) => {
+			if (!card) return () => {};
+
+			const onEnter = () =>
+				gsap.to(card, { y: -6, scale: 1.012, duration: 0.35, ease: "power2.out" });
+			const onLeave = () =>
+				gsap.to(card, { y: 0, scale: 1, duration: 0.45, ease: "power2.out" });
+
+			card.addEventListener("mouseenter", onEnter);
+			card.addEventListener("mouseleave", onLeave);
+			return () => {
+				card.removeEventListener("mouseenter", onEnter);
+				card.removeEventListener("mouseleave", onLeave);
+			};
+		});
+		return () => cleanups.forEach((fn) => fn());
+	}, [posts]);
 
 	useEffect(() => {
 	fetch("http://localhost:1337/api/articles?populate=*", {
@@ -36,8 +59,13 @@ export default function Article()
 
   return (
     <div className="article_box">
-      {posts.map((post) => (
-        <Link key={post.documentId} to={`/article/${post.documentId}`} className="article_card">
+      {posts.map((post, i) => (
+        <Link
+          key={post.documentId}
+          to={`/article/${post.documentId}`}
+          className="article_card"
+          ref={(el) => (cardRefs.current[i] = el)}
+        >
 			<div className="">
 				<div className="article_content">
 				<div className="article_header">

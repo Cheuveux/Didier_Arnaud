@@ -25,15 +25,19 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-header {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: start;
+  font-size:1.5rem;
+  text-align: start;
   color: white;
+}
+
+.main-header h1{
+  width: 500px;
+  margin-left: 1rem;
 }
 
 .App-link {
