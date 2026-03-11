@@ -32,7 +32,8 @@ export default function Article()
 	}, [posts]);
 
 	useEffect(() => {
-	fetch("http://localhost:1337/api/articles?populate=*", {
+	
+	fetch(`${process.env.REACT_APP_API_URL}/api/articles?populate=*`, {
 		method: "GET",
 		headers: {
 		Accept: "application/json",
@@ -75,7 +76,7 @@ export default function Article()
 				<div className="article_desc">
 					<img 
 					className="img_article_desc"
-					src={post.Image?.[0]?.url ? `http://localhost:1337${post.Image[0].url}` : null}
+					src={post.Image?.[0]?.url ? `${process.env.REACT_APP_API_URL}${post.Image[0].url}` : null}
 					alt={post.Titre}/>
 					<p className="text_article_desc">{post.Description}</p>
 				</div>

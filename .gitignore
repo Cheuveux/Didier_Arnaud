@@ -1,4 +1,14 @@
 ############################
+# Environment files (secrets)
+############################
+
+.env
+.env.local
+.env.production
+backend/.env
+frontend/.env
+
+############################
 # OS X
 ############################
 

@@ -9,7 +9,7 @@ export default function ArticlePage() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		fetch(`http://localhost:1337/api/articles/${id}?populate=*`, {
+		fetch(`${process.env.REACT_APP_API_URL}/api/articles/${id}?populate=*`, {
 			method: "GET",
 			headers: {
 				Accept: "application/json",
@@ -43,7 +43,7 @@ export default function ArticlePage() {
 			{post.Image?.[0]?.url && (
 				<img
 					className="article_page_img"
-					src={`http://localhost:1337${post.Image[0].url}`}
+					src={`${process.env.REACT_APP_API_URL}${post.Image[0].url}`}
 					alt={post.Titre}
 				/>
 			)}
