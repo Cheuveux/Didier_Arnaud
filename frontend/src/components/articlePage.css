@@ -1,4 +1,5 @@
 .article_page {
+  position: relative;
   max-width: 750px;
   width: 95vw;
   margin: 2rem auto;
@@ -7,6 +8,7 @@
 
 .back_link {
   display: inline-block;
+  position: relative;
   margin-bottom: 1.5rem;
   text-decoration: none;
   color: grey;
@@ -55,4 +57,16 @@
   text-align: justify;
   line-height: 1.7;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 625px)
+{
+  .back_link {
+    position: absolute;
+    right: 5%;
+    top: 0%; 
+  }
+  .article_page_title {
+    text-align: start;
+  }
 }

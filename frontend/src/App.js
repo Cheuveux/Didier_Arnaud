@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
      <header className="main-header">
-        <h1>Feuillets Numerique de Didier Arnaud</h1>
+        <h1>Feuillets Numeriques de Didier Arnaud</h1>
       </header>
       <Routes>
         <Route path="/" element={<Articles />} />

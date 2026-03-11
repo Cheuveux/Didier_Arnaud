@@ -12,6 +12,7 @@
 .article_card {
   width: 700px;
   max-width: 95vw;
+  display: flex;
   position: relative;
   z-index: 1;
   overflow: visible;
@@ -66,3 +67,38 @@
 	border-bottom: grey 1px solid ;
 }
 
+
+@media screen and (max-width: 625px) {
+  .article_box {
+    margin-top: 1rem;
+  }
+  .article_card {
+    max-width: 95vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .article_header {
+    padding: .25rem;
+  }
+  .article_title {
+    font-size: 1rem;
+  }
+  .article_date {
+    font-size: .8rem;
+  }
+  .article_desc {
+    justify-content: start;
+    align-items: center;
+    margin: .25rem .5rem;
+    gap: .5rem;
+  }
+  .img_article_desc {
+    width: 120px;
+    height: 80px;
+  }
+  .text_article_desc {
+    font-size: .7rem;
+    text-align: justify;
+    padding: 0.1rem;
+  }
+}

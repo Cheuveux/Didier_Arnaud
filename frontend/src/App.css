@@ -52,3 +52,12 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 625px){
+  .main-header {
+    font-size: 1.1rem;
+  }
+  .main-header h1 {
+    width: 320px;
+  }
+}
