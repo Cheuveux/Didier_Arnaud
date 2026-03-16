@@ -30,6 +30,9 @@
 
 .article_page_title {
   font-size: 2.5rem;
+  font-family: var(--font-title);
+  font-weight: var(--font-weight-title);
+  letter-spacing: 0.01em;
   margin: 0;
 }
 
@@ -46,14 +49,17 @@
 }
 
 .article_page_desc {
-  font-weight: 600;
+  font-weight: var(--font-weight-body-bold);
+  font-family: var(--font-body);
   font-size: 1.1rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
   border-left: 4px solid grey;
   padding-left: 1rem;
 }
 
 .article_page_contenu p {
+  font-family: var(--font-body);
   text-align: justify;
   line-height: 1.7;
   margin-bottom: 1rem;

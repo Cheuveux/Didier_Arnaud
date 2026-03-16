@@ -7,7 +7,8 @@ function App() {
   return (
     <BrowserRouter>
      <header className="main-header">
-        <h1>Feuillets Numeriques de Didier Arnaud</h1>
+        <h1>Par Monts et par Vaux, par Didier Arnaud.</h1>
+        <h2> (Chroniques de la montagne, <br/>du voyage et du jazz)</h2>
       </header>
       <Routes>
         <Route path="/" element={<Articles />} />
