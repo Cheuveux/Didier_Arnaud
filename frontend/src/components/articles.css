@@ -46,6 +46,9 @@
 }
 .article_title {
 	font-size: 2rem;
+	font-family: var(--font-title);
+	font-weight: var(--font-weight-title);
+	letter-spacing: 0.01em;
 }
 .article_desc {
 	display: flex;
@@ -61,8 +64,8 @@
 
 .text_article_desc{
 	text-align: justify;
-	font-weight: 600;
-	padding: 0.25rem;
+	font-weight: var(--font-weight-body-bold);
+	font-family: var(--font-body);
 	border-top: grey 1px solid;
 	border-bottom: grey 1px solid ;
 }

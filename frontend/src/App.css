@@ -6,6 +6,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  --font-body: 'Lora', serif;
+  --font-title: 'Poppins', sans-serif;
+  --font-weight-body: 400;
+  --font-weight-body-bold: 600;
+  --font-weight-title: 900;
+  --font-weight-title-secondary: 800;
 }
 .App {
   text-align: center;
@@ -27,19 +33,32 @@
 
 .main-header {
   width: 100%;
+  max-width: 100%;
+  margin: 2rem 0 0;
   display: flex;
   flex-direction: column;
   align-items: start;
-  font-size:1.5rem;
-  text-align: start;
+  font-size:1.2rem;
   color: white;
 }
 
 .main-header h1{
-  width: 500px;
-  margin-left: 1rem;
+  width: 400px;
+  text-align: start;
+  font-family: var(--font-title);
+  font-weight: var(--font-weight-title);
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5rem 2rem;
 }
 
+.main-header h2 {
+  font-size: 1rem;
+  font-family: var(--font-title);
+  font-weight: var(--font-weight-title-secondary);
+  text-align: center;
+  width: 250px;
+  margin:0 0 0 2rem;
+}
 .App-link {
   color: #61dafb;
 }
