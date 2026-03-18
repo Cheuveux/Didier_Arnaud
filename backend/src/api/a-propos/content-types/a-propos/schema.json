@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "a_proposs",
+  "info": {
+    "singularName": "a-propos",
+    "pluralName": "a-proposs",
+    "displayName": "a_propos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Photo_Profile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Article_Journal": {
+      "type": "blocks"
+    }
+  }
+}
