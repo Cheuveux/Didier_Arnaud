@@ -1,0 +1,35 @@
+.a-propos {
+	width: 95vw;
+	max-width: 850px;
+}
+.returnBtn {
+	display: flex;
+	width: 95%;
+	margin: 1rem;
+}
+.a-propos a {
+	text-decoration: none;
+	font-weight: 700;
+	color: rgba(0, 0, 0, 0.806);
+	border-bottom: black 1px dotted;
+}
+.a-propos h2 {
+	font-family: var(--font-title);
+}
+.a-propos section {
+	margin-bottom: 3rem;
+}
+
+.auteur-info p {
+	text-align: justify;
+	text-align: start;
+}
+
+@media screen and (max-width: 625px){
+	.auteur-info p {
+		line-height: 1.2;
+		font-size: 0.92rem;
+		text-align: justify;
+		margin-bottom: 1.5rem;
+	}
+}
