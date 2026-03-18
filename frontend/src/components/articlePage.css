@@ -1,9 +1,27 @@
+body {
+  background-image: url('/public/snow.png');
+  background-repeat: repeat;
+  z-index: -1; 
+}
 .article_page {
   position: relative;
   max-width: 750px;
   width: 95vw;
   margin: 2rem auto;
   padding: 1rem;
+}
+
+.article_page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/snow.png');
+  background-repeat: repeat;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .back_link {
