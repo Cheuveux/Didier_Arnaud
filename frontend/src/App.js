@@ -11,11 +11,13 @@ function App() {
         <h1>Par Monts et par Vaux.</h1>
         <h2> (Chroniques de la montagne, <br/>du voyage et du jazz)</h2>
       </header>
-      <Routes>
-        <Route path="/" element={<Articles />} />
-        <Route path="/article/:id" element={<ArticlePage />} />
-        <Route path="/a_proposs" element={<APropos />}/>
-      </Routes>
+      <main className="content">
+        <Routes>
+          <Route path="/" element={<Articles />} />
+          <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="/a_proposs" element={<APropos />}/>
+        </Routes>
+      </main>
       <footer>
         <div className="a-propos-link">
           <Link  to="/a_proposs">par Didier Arnaud</Link> 
