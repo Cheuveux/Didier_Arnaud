@@ -467,6 +467,38 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAProposAPropos extends Struct.CollectionTypeSchema {
+  collectionName: 'a_proposs';
+  info: {
+    displayName: 'a_propos';
+    pluralName: 'a-proposs';
+    singularName: 'a-propos';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Article_Journal: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::a-propos.a-propos'
+    > &
+      Schema.Attribute.Private;
+    Photo_Profile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -1047,6 +1079,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::a-propos.a-propos': ApiAProposAPropos;
       'api::article.article': ApiArticleArticle;
       'api::information.information': ApiInformationInformation;
       'plugin::content-releases.release': PluginContentReleasesRelease;

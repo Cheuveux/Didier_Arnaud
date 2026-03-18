@@ -90,7 +90,18 @@ body {
     right: 5%;
     top: 0%; 
   }
+
   .article_page_title {
     text-align: start;
   }
+
+  .article_page_desc {
+    font-size: 1rem;
+  }
+
+  .article_page_contenu p {
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
 }
