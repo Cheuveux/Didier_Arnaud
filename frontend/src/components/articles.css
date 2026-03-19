@@ -88,6 +88,10 @@
     justify-content: center;
     align-items: center;
   }
+  .article_card:hover {
+  box-shadow: none;
+  background-color: transparent;
+}
   .article_header {
     padding: .25rem;
   }
