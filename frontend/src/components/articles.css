@@ -11,7 +11,7 @@
 
 .article_card {
   width: 700px;
-  max-width: 95vw;
+  max-width: 700px;
   display: flex;
   position: relative;
   z-index: 1;
@@ -67,7 +67,9 @@
 	font-weight: var(--font-weight-body-bold);
 	font-family: var(--font-body);
 	border-top: grey 1px solid;
-	border-bottom: grey 1px solid ;
+	border-bottom: grey 1px solid;
+	flex: 0 0 60.66%;
+	margin-left: auto;
 }
 
 

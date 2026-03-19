@@ -46,7 +46,7 @@ export default function ArticlePage() {
 				<img
 					className="article_page_img"
 					src={`${process.env.REACT_APP_API_URL}${post.Image[0].url}`}
-					alt={post.Titre}
+					alt=""
 				/>
 			)}
 			<p className="article_page_desc">{post.Description}</p>
