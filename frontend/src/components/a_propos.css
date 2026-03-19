@@ -1,6 +1,7 @@
 .a-propos {
 	width: 90vw;
 	max-width: 850px;
+	min-height: 80vh;
 }
 .returnBtn {
 	display: flex;
