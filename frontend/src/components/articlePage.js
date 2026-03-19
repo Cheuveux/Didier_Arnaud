@@ -34,7 +34,7 @@ export default function ArticlePage() {
 	if (!post) return <p>Article introuvable.</p>;
 
 	return (
-		<div className="article_page" style={{ backgroundImage: 'url(/snow.png)' }}>
+		<div className="article_page">
 			<div className="back_link">
 				<Link to="/">← Retour</Link>
 			</div>
