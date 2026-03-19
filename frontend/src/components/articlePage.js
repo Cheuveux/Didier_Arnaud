@@ -35,7 +35,9 @@ export default function ArticlePage() {
 
 	return (
 		<div className="article_page" style={{ backgroundImage: 'url(/snow.png)' }}>
-			<Link to="/" className="back_link">← Retour</Link>
+			<div className="back_link">
+				<Link to="/">← Retour</Link>
+			</div>
 			<div className="article_page_header">
 				<h1 className="article_page_title">{post.Titre}</h1>
 				<p className="article_page_date">{post.Date}</p>
