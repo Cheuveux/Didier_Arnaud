@@ -49,7 +49,7 @@
 	font-family: var(--font-title);
 	font-weight: var(--font-weight-title);
 	letter-spacing: 0.01em;
-	margin: 0;
+	margin-left: 1rem;
 	line-height: 1.1;
 }
 .article_desc {
@@ -59,7 +59,7 @@
 }
 .img_article_desc {
 	display: flex;
-	width: 250px;
+	width: 280px;
 	height: auto;
 	border-radius: 2px;
 }
@@ -70,16 +70,18 @@
 	font-family: var(--font-body);
 	border-top: grey 1px solid;
 	border-bottom: grey 1px solid;
-	flex: 0 0 60.66%;
+	flex: 0 0 55%;
 	margin-left: auto;
 	font-size: 0.9rem;
 	line-height: 1.3;
+  height: fit-content;
+  padding: 0.5rem 0;
 }
 
 
 @media screen and (max-width: 625px) {
   .article_box {
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
   .article_card {
     max-width: 95vw;
@@ -102,8 +104,8 @@
     gap: .5rem;
   }
   .img_article_desc {
-    width: 120px;
-    height: 80px;
+    width: 140px;
+    height: auto;
   }
   .text_article_desc {
     font-size: .7rem;
