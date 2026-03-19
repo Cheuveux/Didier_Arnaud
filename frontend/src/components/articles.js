@@ -45,7 +45,12 @@ export default function Article()
 		})
 		.then((data) => {
 		console.log("Articles data:", data.data); // Vérifie la structure
-		setPosts(data.data || []);
+		const sortedPosts = (data.data || []).sort((a, b) => {
+			const dateA = new Date(a.updatedAt || a.createdAt);
+			const dateB = new Date(b.updatedAt || b.createdAt);
+			return dateB - dateA; // Plus récents d'abord
+		});
+		setPosts(sortedPosts);
 		setIsLoading(false);
 		})
 		.catch((err) => {
