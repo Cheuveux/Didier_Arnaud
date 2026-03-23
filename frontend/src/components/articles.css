@@ -91,6 +91,8 @@
     max-width: 95vw;
     justify-content: center;
     align-items: center;
+    border: solid rgba(128, 128, 128, 0.217) 2px;
+    border-bottom: solid rgba(128, 128, 128, 0.353) 3px;
   }
   .article_card:hover {
   box-shadow: none;
