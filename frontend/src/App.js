@@ -3,6 +3,7 @@ import './App.css';
 import Articles from './components/articles';
 import ArticlePage from './components/articlePage';
 import APropos from './components/APropos';
+import { CategoryPage } from './components/menu/categoryPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Articles />} />
           <Route path="/article/:id" element={<ArticlePage />} />
           <Route path="/a_proposs" element={<APropos />}/>
+          <Route path="/categorie/:slug" element={<CategoryPage />} />
         </Routes>
       </main>
       <footer>

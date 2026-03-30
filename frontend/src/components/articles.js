@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+import { Nav } from './menu/nav';
 import './articles.css';
 
 export default function Article()
@@ -70,10 +71,12 @@ export default function Article()
 
 	if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!posts.length) return <p>No articles found.</p>;
 
   return (
-    <div className="article_box">
+    <>
+      <Nav />
+      <div className="article_box">
+      {!posts.length && <p>No articles found.</p>}
       {posts.map((post, i) => (
         <Link
           key={post.documentId}
@@ -102,6 +105,7 @@ export default function Article()
 			</div>
         </Link>
       ))}
-    </div>
+      </div>
+    </>
   );
 }
