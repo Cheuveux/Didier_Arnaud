@@ -10,16 +10,25 @@ export default function Article()
 	const [error, setError] = useState(null);
 	const cardRefs = useRef([]);
 
+	// Retirer le blur au chargement de la page d'accueil
+	useEffect(() => {
+		document.body.classList.remove("blur-bg");
+	}, []);
+
 	// GSAP hover animations
 	useEffect(() => {
 		const cards = cardRefs.current;
 		const cleanups = cards.map((card) => {
 			if (!card) return () => {};
 
-			const onEnter = () =>
+			const onEnter = () => {
 				gsap.to(card, { y: -6, scale: 1.012, duration: 0.35, ease: "power2.out" });
-			const onLeave = () =>
+				document.body.classList.add("blur-bg");
+			};
+			const onLeave = () => {
 				gsap.to(card, { y: 0, scale: 1, duration: 0.45, ease: "power2.out" });
+				document.body.classList.remove("blur-bg");
+			};
 
 			card.addEventListener("mouseenter", onEnter);
 			card.addEventListener("mouseleave", onLeave);
@@ -83,7 +92,8 @@ export default function Article()
 						<img
 							className="img_article_desc"
 							src={`${process.env.REACT_APP_API_URL}${post.Image[0].url}`}
-							alt=""
+							alt="Image descriptive de l'article"
+							loading = "lazy"
 						/>
 					)}
 					<p className="text_article_desc">{post.Description}</p>

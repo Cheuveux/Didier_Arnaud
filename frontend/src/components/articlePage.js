@@ -8,6 +8,14 @@ export default function ArticlePage() {
 	const [post, setPost] = useState(null);
 	const [error, setError] = useState(null);
 
+	// Ajouter le blur sur les pages d'articles
+	useEffect(() => {
+		document.body.classList.add("blur-bg");
+		return () => {
+			document.body.classList.remove("blur-bg");
+		};
+	}, []);
+
 	useEffect(() => {
 		fetch(`${process.env.REACT_APP_API_URL}/api/articles/${id}?populate=*`, {
 			method: "GET",
