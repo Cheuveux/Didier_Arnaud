@@ -9,7 +9,7 @@ export function Nav() {
 	return (
 		<nav className="categories-nav">
 			{loading ? (
-				<span>.h.m.m.</span>
+				<span></span>
 			) : (
 				<ul>
 				{categories.map(cat => (

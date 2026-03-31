@@ -45,6 +45,8 @@ export default function APropos() {
 
 	// if (!data)
 	// 	return <p>Chargement...</p>
+	if (!data)
+		return <p>Chargement...</p>
 	return (
 		<div className='a-propos'>
 			<div className='returnBtn'>
