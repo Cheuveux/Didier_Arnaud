@@ -130,4 +130,8 @@
     text-align: justify;
     padding: 0.1rem;
   }
+.img_article_spacer {
+	width: 120px;
+	flex-shrink: 0;
+}
 }

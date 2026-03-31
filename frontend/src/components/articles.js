@@ -69,7 +69,7 @@ export default function Article()
 		});
 	}, []);
 
-	if (isLoading) return <p>Loading...</p>;
+	if (isLoading) return <p>Meditation en cours...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
