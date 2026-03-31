@@ -17,16 +17,15 @@
   justify-content: center;
   align-items: center;
 }
-/* Hide scrollbar for Chrome, Safari and Opera */
-:root::-webkit-scrollbar {
+
+/* :root::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 :root{
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+} */
 
 .App-logo {
   height: 40vmin;

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+import { Nav } from './menu/nav';
 import './articles.css';
 
 export default function Article()
@@ -10,16 +11,25 @@ export default function Article()
 	const [error, setError] = useState(null);
 	const cardRefs = useRef([]);
 
+	// Retirer le blur au chargement de la page d'accueil
+	useEffect(() => {
+		document.body.classList.remove("blur-bg");
+	}, []);
+
 	// GSAP hover animations
 	useEffect(() => {
 		const cards = cardRefs.current;
 		const cleanups = cards.map((card) => {
 			if (!card) return () => {};
 
-			const onEnter = () =>
+			const onEnter = () => {
 				gsap.to(card, { y: -6, scale: 1.012, duration: 0.35, ease: "power2.out" });
-			const onLeave = () =>
+				document.body.classList.add("blur-bg");
+			};
+			const onLeave = () => {
 				gsap.to(card, { y: 0, scale: 1, duration: 0.45, ease: "power2.out" });
+				document.body.classList.remove("blur-bg");
+			};
 
 			card.addEventListener("mouseenter", onEnter);
 			card.addEventListener("mouseleave", onLeave);
@@ -61,10 +71,12 @@ export default function Article()
 
 	if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!posts.length) return <p>No articles found.</p>;
 
   return (
-    <div className="article_box">
+    <>
+      <Nav />
+      <div className="article_box">
+      {!posts.length && <p>No articles found.</p>}
       {posts.map((post, i) => (
         <Link
           key={post.documentId}
@@ -79,12 +91,15 @@ export default function Article()
 					<p className="article_date">{post.Date}</p>
 				</div>
 				<div className="article_desc">
-					{post.Image?.[0]?.url && (
+					{post.Image?.[0]?.url ? (
 						<img
 							className="img_article_desc"
 							src={`${process.env.REACT_APP_API_URL}${post.Image[0].url}`}
-							alt=""
+							alt="Illustration descriptive de l'article"
+							loading = "lazy"
 						/>
+					) : (
+						<div className="img_article_spacer"></div>
 					)}
 					<p className="text_article_desc">{post.Description}</p>
 				</div>
@@ -92,6 +107,7 @@ export default function Article()
 			</div>
         </Link>
       ))}
-    </div>
+      </div>
+    </>
   );
 }
