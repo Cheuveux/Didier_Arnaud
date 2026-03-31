@@ -91,13 +91,15 @@ export default function Article()
 					<p className="article_date">{post.Date}</p>
 				</div>
 				<div className="article_desc">
-					{post.Image?.[0]?.url && (
+					{post.Image?.[0]?.url ? (
 						<img
 							className="img_article_desc"
 							src={`${process.env.REACT_APP_API_URL}${post.Image[0].url}`}
-							alt="Image descriptive de l'article"
+							alt="Illustration descriptive de l'article"
 							loading = "lazy"
 						/>
+					) : (
+						<div className="img_article_spacer"></div>
 					)}
 					<p className="text_article_desc">{post.Description}</p>
 				</div>
