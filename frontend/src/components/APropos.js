@@ -31,6 +31,13 @@ export default function APropos() {
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
+		document.body.classList.add("blur-bg");
+		return () => {
+			document.body.classList.remove("blur-bg");
+		};
+	}, []);
+
+	useEffect(() => {
 		fetch(`${process.env.REACT_APP_API_URL}/api/a-proposs?populate=*`)
 			.then(res =>res.json())
 			.then(json => setData(json.data[0]));
