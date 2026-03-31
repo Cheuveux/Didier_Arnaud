@@ -45,8 +45,9 @@ code {
 
 @media screen and (max-width: 850px){
   body::before {
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
-    background-size: 150%;
+    background-attachment: fixed;
+    background-size: 200%;
   }
 }
