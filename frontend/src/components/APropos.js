@@ -43,8 +43,8 @@ export default function APropos() {
 			.then(json => setData(json.data[0]));
 	}, []);
 
-	if (!data)
-		return <p>Chargement...</p>
+	// if (!data)
+	// 	return <p>Chargement...</p>
 	return (
 		<div className='a-propos'>
 			<div className='returnBtn'>
