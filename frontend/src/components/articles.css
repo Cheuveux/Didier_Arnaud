@@ -101,6 +101,7 @@
     align-items: center;
     border: solid rgba(128, 128, 128, 0.217) 2px;
     border-bottom: solid rgba(128, 128, 128, 0.353) 3px;
+    overflow: hidden;
   }
   .article_card:hover {
   box-shadow: none;
@@ -120,10 +121,13 @@
     align-items: center;
     margin: .25rem .5rem;
     gap: .5rem;
+    overflow: hidden;
   }
   .img_article_desc {
     width: 140px;
     height: auto;
+    max-width: 100%;
+    flex-shrink: 0;
   }
   .text_article_desc {
     font-size: .7rem;
