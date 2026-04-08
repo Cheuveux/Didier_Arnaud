@@ -4,6 +4,7 @@ import { Nav } from './nav'
 import backgroundMountain from '../../assets/background_mountain.png'
 import snowBg from '../../assets/snow.png'
 import voyage_bg from '../../assets/voyage_bg.png'
+import jazz_bg from '../../assets/jazz_bg.png'
 import './categoryPage.css'
 import '../articles.css'
 
@@ -12,6 +13,7 @@ const categoryBackgrounds = {
   'mountain': backgroundMountain,
   'snow': snowBg,
   'voyage': voyage_bg,
+  'jazz' : jazz_bg,
   'default': backgroundMountain
 }
 
