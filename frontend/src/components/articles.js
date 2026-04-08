@@ -84,8 +84,7 @@ export default function Article()
           className="article_card"
           ref={(el) => (cardRefs.current[i] = el)}
         >
-			<div className="">
-				<div className="article_content">
+			<div className="article_content">
 				<div className="article_header">
 					<h2 className="article_title">{post.Titre}</h2>
 					<p className="article_date">{post.Date}</p>
@@ -102,7 +101,6 @@ export default function Article()
 						<div className="img_article_spacer"></div>
 					)}
 					<p className="text_article_desc">{post.Description}</p>
-				</div>
 				</div>
 			</div>
         </Link>

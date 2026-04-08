@@ -5,6 +5,7 @@ import backgroundMountain from '../../assets/background_mountain.png'
 import snowBg from '../../assets/snow.png'
 import voyage_bg from '../../assets/voyage_bg.png'
 import './categoryPage.css'
+import '../articles.css'
 
 // Map category names to background images
 const categoryBackgrounds = {
@@ -89,17 +90,32 @@ export function CategoryPage() {
     <>
       <Nav />
       <main className="category-page">
-        <div className="category-header">
-          <h1>{categoryName || slug}</h1>
-          <Link className="category-btn-return" to="/">
-            ←Retour
-          </Link>
-        </div>
         <ul className="category-articles">
           {articles.map((article, i) => (
             <li key={article.id} ref={(el) => (articleRefs.current[i] = el)}>
-              <Link to={`/article/${article.documentId}`}>
-                {article.Titre}
+              <Link to={`/article/${article.documentId}`} className="article_card">
+                <div className="article_content">
+                  <div className="article_header">
+                    <h2 className='article_title'>
+                      {article.Titre}
+                    </h2>
+                    <p className="article_date">{article.Date}</p>
+                  </div>
+
+                  <div className="article_desc">
+                    {article.Image?.[0]?.url ? (
+                      <img
+                        className="img_article_desc"
+                        src={`${process.env.REACT_APP_API_URL}${article.Image[0].url}`}
+                        alt="Illustration descriptive de l'article"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="img_article_spacer"></div>
+                    )}
+                    <p className="text_article_desc">{article.Description}</p>
+                  </div>
+                </div>
               </Link>
             </li>
           ))}
