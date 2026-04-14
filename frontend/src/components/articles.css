@@ -133,9 +133,10 @@
     font-size: .7rem;
     text-align: justify;
     padding: 0.1rem;
+    margin-right: 1rem;
   }
 .img_article_spacer {
-	width: 120px;
+	width: 90px;
 	flex-shrink: 0;
 }
 }
