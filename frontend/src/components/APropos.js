@@ -3,27 +3,41 @@ import { Link } from 'react-router-dom';
 import './a_propos.css'
 
 function renderBlocks(blocks) {
+  if (!blocks || !Array.isArray(blocks)) {
+    return null;
+  }
+  
   return blocks.map((block, i) => {
+    if (!block) return null;
+    
     if (block.type === 'heading') {
       const Tag = `h${block.level}`;
-      return <Tag key={i}>{block.children.map(c => c.text).join('')}</Tag>;
+      const children = block.children && Array.isArray(block.children) 
+        ? block.children.map(c => c?.text || '').join('')
+        : '';
+      return <Tag key={i}>{children}</Tag>;
     }
+    
     if (block.type === 'paragraph') {
-      return (
-        <p key={i}>
-          {block.children.map((child, j) => {
+      const children = block.children && Array.isArray(block.children)
+        ? block.children.map((child, j) => {
+            if (!child) return null;
             if (child.type === 'link') {
+              const linkText = child.children && Array.isArray(child.children)
+                ? child.children.map(c => c?.text || '').join('')
+                : '';
               return (
                 <a key={j} href={child.url} target="_blank" rel="noreferrer">
-                  {child.children.map(c => c.text).join('')}
+                  {linkText}
                 </a>
               );
             }
-            return child.text;
-          })}
-        </p>
-      );
+            return child.text || '';
+          })
+        : '';
+      return <p key={i}>{children}</p>;
     }
+    
     return null;
   });
 }
@@ -46,8 +60,7 @@ export default function APropos() {
 	// if (!data)
 	// 	return <p>Chargement...</p>
 	if (!data)
-		return <p>:w
-      editation en cours...</p>
+		return <p>Édition en cours...</p>
 	return (
 		<div className='a-propos'>
 			<div className='returnBtn'>
