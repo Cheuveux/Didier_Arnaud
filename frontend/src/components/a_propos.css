@@ -21,13 +21,15 @@
 	margin-bottom: 3rem;
 }
 
-.auteur-info p {
+.auteur-info p , 
+.auteur-publications p{
 	text-align: justify;
 	text-align: start;
 }
 
 @media screen and (max-width: 750px){
-	.auteur-info p {
+	.auteur-info p,
+	.auteur-publications p {
 		line-height: 1.5;
 		font-size: 0.92rem;
 		text-align: justify;
