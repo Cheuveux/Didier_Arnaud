@@ -1,17 +1,141 @@
 /* folder styling article */
 
 .article_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 95vw;
+  margin-top: 8rem;
+  align-items: start;
+  padding: 0 2rem;
+}
+
+/* Featured article (first one) - left side, 2 rows tall */
+.article_card.featured {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+/* Sidebar articles - right side layout (stacked top) */
+.article_card.sidebar {
+  overflow: hidden;
+}
+
+.article_card.sidebar:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.article_card.sidebar:nth-of-type(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Bottom articles - side by side at 50% width each */
+.article_card.sidebar:nth-of-type(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.article_card.sidebar:nth-of-type(5) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* Hide image spacers */
+.img_article_spacer {
+  display: none;
+}
+
+/* Featured article styles */
+.article_card.featured .article_title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article_card.featured .img_article_desc {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.article_card.featured .text_article_desc {
+  font-size: 1.2rem;
+}
+
+/* Sidebar article styles */
+.article_card.sidebar .article_title {
+  font-size: 1rem;
+}
+
+.article_card.sidebar .img_article_desc {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.article_card.sidebar .text_article_desc {
+  font-size: 0.9rem;
+}
+
+.article_card.featured .article_desc {
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin: 0rem 0rem;
+  gap: 1.5rem;
+}
+
+.article_card.featured .text_article_desc {
+  font-size: 1rem;
+  border-top: rgb(101, 94, 94) 3px dotted;
+  border-bottom: rgb(122, 115, 115) 1px solid;
+  margin: 0 0.5rem;
+  padding: 1rem 0;
+  flex: 1;
+  line-height: 1.6;
+  max-height: 70px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+/* Sidebar article description styling */
+.article_card.sidebar .article_desc {
+  flex-direction: row;
+  width: 95%;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  margin: 0.5rem 0rem;
+  /* min-height: 100px; */
+}
+
+.article_card.sidebar .article_header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8rem;
-  
+  flex: 1;
+}
+
+.article_card.sidebar .text_article_desc {
+  border-top: rgb(101, 94, 94) 3px dotted;
+  border-bottom: rgb(122, 115, 115) 1px solid;
+  padding: 0.3rem 0 0.3rem 1rem;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  flex: 1;
+  text-overflow: ellipsis;
 }
 
 .article_card {
-  width: 700px;
-  max-width: 700px;
   display: flex;
   position: relative;
   z-index: 1;
@@ -76,7 +200,7 @@
 	flex-shrink: 0;
 }
 
-.text_article_desc{
+/* .text_article_desc{
 	text-align: justify;
 	font-weight: var(--font-weight-body-bold);
 	font-family: var(--font-body);
@@ -88,20 +212,42 @@
 	line-height: 1.3;
   height: fit-content;
   padding: 0.5rem 0;
-}
+} */
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1050px) {
   .article_box {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     margin-top: 3rem;
+    padding: 0 1rem;
+  }
+  
+  /* Featured on top, full width */
+  .article_card.featured {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  
+  /* All sidebar articles stacked in single column */
+  .article_card.sidebar:nth-of-type(2),
+  .article_card.sidebar:nth-of-type(3),
+  .article_card.sidebar:nth-of-type(4),
+  .article_card.sidebar:nth-of-type(5) {
+    grid-column: 1;
+    grid-row: auto;
   }
   .article_card {
     max-width: 95vw;
-    justify-content: center;
-    align-items: center;
-    border: solid rgba(128, 128, 128, 0.217) 2px;
-    border-bottom: solid rgba(128, 128, 128, 0.353) 3px;
     overflow: hidden;
+  }
+  
+  .article_card.featured {
+    flex-direction: column;
+  }
+  
+  .article_card.sidebar {
+    flex-direction: row;
   }
   .article_card:hover {
   box-shadow: none;
