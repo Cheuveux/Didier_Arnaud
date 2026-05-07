@@ -128,7 +128,6 @@
   line-height: 1.4;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   flex: 1;
   text-overflow: ellipsis;
@@ -284,4 +283,34 @@
 	width: 90px;
 	flex-shrink: 0;
 }
+}
+
+@media screen and (max-width: 750px) {
+  .article_card.featured .article_title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article_card.featured .text_article_desc {
+  font-size: .9rem;
+}
+  .article_card.sidebar .img_article_desc {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+  }
+
+  .article_card.sidebar .article_desc {
+    gap: 0.5rem;
+    margin: 0.3rem 0;
+  }
+
+  .article_card.sidebar .text_article_desc {
+    font-size: 0.8rem;
+    padding: 0.2rem 0 0.2rem 0.5rem;
+  }
+
+  .article_card.sidebar {
+    margin-bottom: 0.8rem;
+  }
 }

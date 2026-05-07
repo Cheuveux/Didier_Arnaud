@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { ShareButton } from "./ShareButton";
 import './articlePage.css';
 
 export default function ArticlePage() {
@@ -48,7 +49,10 @@ export default function ArticlePage() {
 			</div>
 			<div className="article_page_header">
 				<h1 className="article_page_title">{post.Titre}</h1>
+			<div className="article_page_meta">
 				<p className="article_page_date">{post.Date}</p>
+				<ShareButton articleId={id} articleTitle={post.Titre} />
+			</div>
 			</div>
 			{post.Image?.[0]?.url && (
 				<img
