@@ -26,7 +26,7 @@
 	text-align: start;
 }
 
-@media screen and (max-width: 625px){
+@media screen and (max-width: 750px){
 	.auteur-info p {
 		line-height: 1.5;
 		font-size: 0.92rem;

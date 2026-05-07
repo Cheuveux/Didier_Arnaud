@@ -4,7 +4,7 @@ import Articles from './components/articles';
 import ArticlePage from './components/articlePage';
 import APropos from './components/APropos';
 import { CategoryPage } from './components/menu/categoryPage';
-
+import { Sommaire } from './components/sommaire/sommaire'
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +18,7 @@ function App() {
           <Route path="/article/:id" element={<ArticlePage />} />
           <Route path="/a_proposs" element={<APropos />}/>
           <Route path="/categorie/:slug" element={<CategoryPage />} />
+          <Route path="/sommaire" element={<Sommaire />}/>
         </Routes>
       </main>
       <footer>

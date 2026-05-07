@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img">
+  <title>Icône boussole — statique</title>
+  <desc>Rose des vents avec aiguille Nord/Sud, cercles concentriques et points cardinaux</desc>
+
+  <!-- Cercle extérieur principal -->
+  <circle cx="40" cy="40" r="36" fill="none" stroke="#534f4f" stroke-width="2"/>
+
+  <!-- Graduation : 8 petits traits sur le bord -->
+  <line x1="40" y1="5"  x2="40" y2="11" stroke="#534f4f" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="40" y1="69" x2="40" y2="75" stroke="#534f4f" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="5"  y1="40" x2="11" y2="40" stroke="#534f4f" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="69" y1="40" x2="75" y2="40" stroke="#534f4f" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Diagonaux courts -->
+  <line x1="14.5" y1="14.5" x2="18.5" y2="18.5" stroke="#534f4f" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+  <line x1="61.5" y1="14.5" x2="57.5" y2="18.5" stroke="#534f4f" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+  <line x1="14.5" y1="65.5" x2="18.5" y2="61.5" stroke="#534f4f" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+  <line x1="65.5" y1="65.5" x2="61.5" y2="61.5" stroke="#534f4f" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- Cercle intérieur décoratif -->
+  <circle cx="40" cy="40" r="26" fill="none" stroke="#534f4f" stroke-width="0.6" opacity="0.25"/>
+
+  <!-- Lettre N -->
+  <text x="40" y="9" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia, serif" font-size="8" font-weight="700"
+        fill="#534f4f" letter-spacing="0">N</text>
+  <!-- Lettre S -->
+  <text x="40" y="74" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia, serif" font-size="7" font-weight="400"
+        fill="#534f4f" opacity="0.55">S</text>
+  <!-- Lettre E -->
+  <text x="74" y="41" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia, serif" font-size="7" font-weight="400"
+        fill="#534f4f" opacity="0.55">E</text>
+  <!-- Lettre O -->
+  <text x="6" y="41" text-anchor="middle" dominant-baseline="middle"
+        font-family="Georgia, serif" font-size="7" font-weight="400"
+        fill="#534f4f" opacity="0.55">O</text>
+
+  <!-- Aiguille Nord (losange plein, pointe vers le haut) -->
+  <polygon points="40,16 44,38 40,34 36,38" fill="#534f4f"/>
+  <!-- Aiguille Sud (losange creux, pointe vers le bas) -->
+  <polygon points="40,64 44,42 40,46 36,42" fill="none" stroke="#534f4f" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Cercle central pivot -->
+  <circle cx="40" cy="40" r="4.5" fill="#ffffff" stroke="#534f4f" stroke-width="1.5"/>
+  <circle cx="40" cy="40" r="1.8" fill="#534f4f"/>
+</svg>

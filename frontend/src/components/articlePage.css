@@ -83,7 +83,7 @@
   margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 625px)
+@media screen and (max-width: 750px)
 {
   .article_page {
     padding: 1rem 0;

@@ -2,6 +2,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useCategories } from './useCategories'
+import menuIcon from '../../assets/menu-icone/menu_static.svg'
+import menuAnim from '../../assets/menu-icone/menu_anim.svg'
 import './nav.css'
 
 export function Nav() {
@@ -69,15 +71,22 @@ export function Nav() {
 							</Link>
 						</li>
 					))}
+					{/* SOMMAIRE LINK */}
+					<li>
+						<Link
+							to = "/sommaire"
+							className = {pathname === '/sommaire' ? 'active' : ''}
+						>
+							Sommaire
+						</Link>
+					</li>
 					</ul>
 				)}
 			</nav>
 
 			{/* Hamburger button - only visible on mobile */}
 			<button className="menu-toggle" onClick={toggleDrawer}>
-				<span></span>
-				<span></span>
-				<span></span>
+				<img src={isDrawerOpen ? menuAnim : menuIcon} alt="Menu"/>
 			</button>
 
 			{/* Drawer overlay - closes drawer when clicked */}
@@ -110,6 +119,14 @@ export function Nav() {
 								</Link>
 							</li>
 						))}
+						<li>
+							<Link
+								to = "/sommaire"
+								className = {pathname === '/sommaire' ? 'active' : ''}
+							>
+								Sommaire
+							</Link>
+						</li>
 						</ul>
 					)}
 				</nav>
