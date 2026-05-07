@@ -83,7 +83,7 @@ export default function Article()
         <Link
           key={post.documentId}
           to={`/article/${post.documentId}`}
-          className="article_card"
+          className={`article_card ${i === 0 ? 'featured' : 'sidebar'}`}
           ref={(el) => (cardRefs.current[i] = el)}
         >
 			<div className="article_content">
