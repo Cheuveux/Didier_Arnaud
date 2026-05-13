@@ -14,7 +14,7 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(206, 197, 197, 0.678);
+  background-color: rgba(206, 197, 197, 0.808);
   position: relative;
   --bg-image: url('./assets/background_mountain.png');
 }

@@ -10,6 +10,7 @@
   --font-weight-body-bold: 600;
   --font-weight-title: 900;
   --font-weight-title-secondary: 800;
+  --bg-article-card: rgba(195, 188, 188, 0.642);
 }
 .App {
   text-align: center;
@@ -103,7 +104,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1300px){
   .main-header {
     align-items: center;
   }
