@@ -89,7 +89,7 @@
   .menu-toggle {
     display: block;
     position: absolute;
-    top: 5.5rem;
+    top: 2.5rem;
     left: 3rem;
     z-index: 1001;
     background: none;
@@ -188,7 +188,7 @@
 
   .drawer .drawer-nav a {
     padding: 0.5rem;
-    font-size: 1.95rem;
+    font-size: 2.95rem;
   }
 }
 
@@ -203,5 +203,8 @@
   .menu-toggle img {
     width: 35px;
     height: 35px;
+  }
+  .drawer .drawer-nav a {
+		font-size: 2rem;
   }
 }
