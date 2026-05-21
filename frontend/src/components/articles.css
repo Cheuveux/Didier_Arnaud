@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 1000px;
   width: 95vw;
   margin-top: 8rem;
   align-items: start;
@@ -66,6 +66,7 @@
 
 .article_card.featured .text_article_desc {
   font-size: 1.2rem;
+  max-width: 80%;
 }
 
 /* Sidebar article styles */
@@ -87,14 +88,13 @@
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  margin: 0rem 0rem;
   gap: 1.5rem;
 }
 
 .article_card.featured .text_article_desc {
   font-size: 1rem;
   border-top: rgb(101, 94, 94) 3px dotted;
-  border-bottom: rgb(122, 115, 115) 1px solid;
+  border-bottom: rgb(99, 94, 94) 2px solid;
   margin: 0 0.5rem;
   padding: 1rem 0;
   flex: 1;
@@ -150,7 +150,7 @@
   transition: box-shadow 0.35s ease, background-color 0.35s ease;
   will-change: transform;
   cursor: pointer;
-
+  background-color: var(--bg-article-card);
 }
 
 .article_card:hover {
@@ -177,9 +177,7 @@
 .article_desc {
 	display: flex;
   position: relative;
-  width: 98%;
-  justify-content: flex-end;
-	margin: 0.3rem 0.5rem;
+	margin-left: 1rem;
 	gap: 0.8rem;
 }
 .img_article_desc {
@@ -198,19 +196,14 @@
 	flex-shrink: 0;
 }
 
-/* .text_article_desc{
+.text_article_desc{
 	text-align: justify;
 	font-weight: var(--font-weight-body-bold);
 	font-family: var(--font-body);
-	border-top: grey 1px solid;
-	border-bottom: grey 1px solid;
-	flex: 0 0 55%;
-	margin-left: auto;
-	font-size: 0.9rem;
-	line-height: 1.3;
-  height: fit-content;
   padding: 0.5rem 0;
-} */
+  margin-left: 1rem;
+  max-width: 80%;
+}
 
 
 @media screen and (max-width: 1050px) {
@@ -286,23 +279,45 @@
 }
 
 @media screen and (max-width: 750px) {
-  .article_card.featured .article_title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
 
-.article_card.featured .text_article_desc {
-  font-size: .9rem;
-}
+  .article_card.featured .article_title {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .article_card.featured .article_desc {
+    gap: 0.5rem;
+  }
+
+  .article_card.featured .text_article_desc {
+    font-size: .9rem;
+    max-height: 50px;
+  }
+
+  .article_card.featured .img_article_desc {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
   .article_card.sidebar .img_article_desc {
     width: 70px;
     height: 70px;
     flex-shrink: 0;
   }
 
+  .article_card.sidebar .article_header {
+    gap: 0.2rem;
+  }
+
+  .article_card.sidebar .article_title {
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+  }
+
   .article_card.sidebar .article_desc {
-    gap: 0.5rem;
-    margin: 0.3rem 0;
+    gap: 0.3rem;
+    margin: 0.1rem 0;
   }
 
   .article_card.sidebar .text_article_desc {
