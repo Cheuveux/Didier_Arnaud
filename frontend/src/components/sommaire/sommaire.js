@@ -68,6 +68,7 @@ export function Sommaire()
     <>
       <Nav />
       <div className="sommaire">
+		<h1 className="sommaire_title">SOMMAIRE</h1>
       {!posts.length && <p>No articles found.</p>}
       {posts.map((post, i) => (
         <Link

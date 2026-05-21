@@ -9,7 +9,15 @@
 	margin-top: 7rem;
 
 }
-
+.sommaire_title {
+	font-family: var(--font-title);
+	width: 90%;
+	text-align: end;
+	font-size: 	5rem;
+	letter-spacing: 2px;
+	color: var(--title-grey-color);
+	margin-bottom: 2rem;
+}
 .sommaire_content {
 	margin-left: 2rem;
 	max-width: 90vw;

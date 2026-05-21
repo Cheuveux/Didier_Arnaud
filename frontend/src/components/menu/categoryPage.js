@@ -5,8 +5,10 @@ import backgroundMountain from '../../assets/background_mountain.png'
 import snowBg from '../../assets/snow.png'
 import voyage_bg from '../../assets/voyage_bg.png'
 import jazz_bg from '../../assets/jazz_bg.png'
+import aucun_lien from '../../assets/aucun_lien_bg.gif'
 import './categoryPage.css'
 import '../articles.css'
+import gsap from "gsap";  // Ajouter l'import
 
 // Map category names to background images
 const categoryBackgrounds = {
@@ -14,6 +16,7 @@ const categoryBackgrounds = {
   'snow': snowBg,
   'voyage': voyage_bg,
   'jazz' : jazz_bg,
+  'aucun lien': aucun_lien,
   'default': backgroundMountain
 }
 
@@ -88,6 +91,28 @@ export function CategoryPage() {
     }
   }, [])
 
+  // Ajout de classe anim pour opening page category
+  useEffect(() => {
+    const page = document.querySelector('.category-page');
+    const list = document.querySelector('.category-articles');
+    
+    if (page) {
+      // Animation du background
+      gsap.fromTo(page, 
+        { opacity: 0 }, 
+        { opacity: 1, duration: 0.8, ease: 'power2.inOut' }
+      );
+    }
+    
+    // Animation progressive des articles
+    if (list && articles.length > 0) {
+      gsap.fromTo(
+        articleRefs.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out' }
+      );
+    }
+  }, [slug, articles])
   return (
     <>
       <Nav />

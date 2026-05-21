@@ -12,6 +12,15 @@
   background: transparent;
 }
 
+@keyframes fadeInBg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .category-header {
   position: absolute;
   top: -4%;
@@ -32,6 +41,8 @@ body::before{
   bottom: 0;
   background-image: var(--bg-image);
   filter: drop-shadow(16px 16px 20px rgba(218, 218, 218, 0.566)) invert(20%);
+  opacity: var(--bg-opacity, 1);
+  transition: opacity 0.8s ease-in-out;
 }
 .category-title {
   font-family: var(--font-title);

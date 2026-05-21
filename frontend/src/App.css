@@ -11,6 +11,7 @@
   --font-weight-title: 900;
   --font-weight-title-secondary: 800;
   --bg-article-card: rgba(195, 188, 188, 0.642);
+  --title-grey-color: rgba(0, 0, 0, 0.525); 
 }
 .App {
   text-align: center;
@@ -62,7 +63,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  color: rgba(0, 0, 0, 0.525);
+  color: var(--title-grey-color);
 }
 
 .main-header h1{
