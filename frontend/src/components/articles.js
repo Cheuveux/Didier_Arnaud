@@ -16,8 +16,11 @@ export default function Article()
 		document.body.classList.remove("blur-bg");
 	}, []);
 
-	// GSAP hover animations
+	// GSAP hover animations - only on screens larger than 750px
 	useEffect(() => {
+		const isMobile = window.innerWidth <= 750;
+		if (isMobile) return;
+
 		const cards = cardRefs.current;
 		const cleanups = cards.map((card) => {
 			if (!card) return () => {};

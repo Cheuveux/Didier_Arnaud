@@ -34,8 +34,11 @@ export function CategoryPage() {
     }
   }, [])
 
-  // Add hover blur effect to articles
+  // Add hover blur effect to articles - only on screens larger than 750px
   useEffect(() => {
+    const isMobile = window.innerWidth <= 750;
+    if (isMobile) return;
+
     const items = articleRefs.current
     const cleanups = items.map((item) => {
       if (!item) return () => {}
