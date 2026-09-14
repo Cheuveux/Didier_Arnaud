@@ -166,5 +166,9 @@
   height: auto;
   border-radius: 8px;
   margin-bottom: 1.5rem;
+  }
+  .footnote-content {
+    font-size: 12px;
+  }
 }
-}
+

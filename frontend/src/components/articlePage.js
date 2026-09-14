@@ -129,7 +129,10 @@ export default function ArticlePage() {
 					{post.Notes.map((block, index) => (
 						<div className="footnote" id={`note-${index + 1}`} key={index}>
 							<span className="footnote-number">({index + 1})</span>
-							{renderBlock(block, `note-${index}`, "", false)}
+							<div className="footnote-content">
+								{renderBlock(block, `note-${index}`, "", false)}
+							</div>
+
 							<a
 								className="footnote-back"
 								href={`#note-reference-${index + 1}`}
