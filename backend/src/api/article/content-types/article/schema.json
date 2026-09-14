@@ -20,6 +20,9 @@
     "Contenu": {
       "type": "blocks"
     },
+    "Notes": {
+      "type": "blocks"
+    },
     "Image": {
       "type": "media",
       "multiple": true,

@@ -4,6 +4,54 @@ import { ShareButton } from "./ShareButton";
 import Seo from "./SEO/SEO";
 import './articlePage.css';
 
+function renderTextWithFootnoteLinks(text, blockIndex, childIndex) {
+	const parts = text.split(/(\(\d+\))/g);
+
+	return parts.map((part, index) => {
+		const match = part.match(/^\((\d+)\)$/);
+		if (!match) return <span key={`${blockIndex}-${childIndex}-${index}`}>{part}</span>;
+
+		const noteNumber = match[1];
+		const referenceId = `note-reference-${noteNumber}-${blockIndex}-${childIndex}-${index}`;
+		return (
+			<a
+				key={referenceId}
+				href={`#note-${noteNumber}`}
+				id={referenceId}
+				data-note-reference={noteNumber}
+				className="footnote-reference"
+				aria-label={`Voir la note ${noteNumber}`}
+				onClick={(event) => {
+					event.preventDefault();
+					document.getElementById(`note-${noteNumber}`)?.scrollIntoView({
+						behavior: "smooth",
+						block: "start"
+					});
+				}}
+			>
+				({noteNumber})
+			</a>
+		);
+	});
+}
+
+function renderBlock(block, index, className = "", linkFootnotes = true) {
+	const children = block.children?.map((child, childIndex) => (
+		<span key={`${index}-${childIndex}`}>
+			{linkFootnotes
+				? renderTextWithFootnoteLinks(child.text || "", index, childIndex)
+				: child.text || ""}
+		</span>
+	));
+
+	if (block.type === "paragraph") return <p className={className} key={index}>{children}</p>;
+	if (block.type === "heading") {
+		const Tag = `h${block.level}`;
+		return <Tag className={className} key={index}>{children}</Tag>;
+	}
+	return null;
+}
+
 export default function ArticlePage() {
 	const { id } = useParams();
 	const [isLoading, setIsLoading] = useState(true);
@@ -73,17 +121,31 @@ export default function ArticlePage() {
 			)}
 			<p className="article_page_desc">{post.Description}</p>
 			<div className="article_page_contenu">
-				{post.Contenu?.map((block, index) => {
-					if (block.type === "paragraph") {
-						return <p key={index}>{block.children?.map(c => c.text).join("")}</p>;
-					}
-					if (block.type === "heading") {
-						const Tag = `h${block.level}`;
-						return <Tag key={index}>{block.children?.map(c => c.text).join("")}</Tag>;
-					}
-					return null;
-				})}
+				{post.Contenu?.map((block, index) => renderBlock(block, index))}
 			</div>
+			{post.Notes?.length > 0 && (
+				<section className="article_page_notes" aria-labelledby="notes-title">
+					<h2 id="notes-title">Notes</h2>
+					{post.Notes.map((block, index) => (
+						<div className="footnote" id={`note-${index + 1}`} key={index}>
+							<span className="footnote-number">({index + 1})</span>
+							{renderBlock(block, `note-${index}`, "", false)}
+							<a
+								className="footnote-back"
+								href={`#note-reference-${index + 1}`}
+								aria-label={`Revenir à la référence ${index + 1}`}
+								onClick={(event) => {
+									event.preventDefault();
+									document.querySelector(`[data-note-reference="${index + 1}"]`)?.scrollIntoView({
+										behavior: "smooth",
+										block: "center"
+									});
+								}}
+							>↩</a>
+						</div>
+					))}
+				</section>
+			)}
 		</div>
 	);
 }

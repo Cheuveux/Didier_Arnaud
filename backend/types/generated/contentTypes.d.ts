@@ -527,6 +527,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::article.article'
     > &
       Schema.Attribute.Private;
+    Notes: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     Titre: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
