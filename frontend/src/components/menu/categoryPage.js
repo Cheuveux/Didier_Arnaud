@@ -70,6 +70,7 @@ export function CategoryPage() {
       + `?filters[category][Name][$eq]=${slug}`
       + `&populate=category`
       + `&sort=updatedAt:desc`
+      + `&pagination[limit]=100`
 
     fetch(url)
       .then(res => res.json())

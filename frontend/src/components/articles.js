@@ -46,7 +46,7 @@ export default function Article()
 
 	useEffect(() => {
 	
-	fetch(`${process.env.REACT_APP_API_URL}/api/articles?populate=*`, {
+	fetch(`${process.env.REACT_APP_API_URL}/api/articles?populate=*&sort=updatedAt:desc&pagination[limit]=100`, {
 		method: "GET",
 		headers: {
 		Accept: "application/json",
