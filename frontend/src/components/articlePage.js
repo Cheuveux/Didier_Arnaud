@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ShareButton } from "./ShareButton";
+import Seo from "./SEO/SEO";
 import './articlePage.css';
 
 export default function ArticlePage() {
@@ -44,6 +45,15 @@ export default function ArticlePage() {
 
 	return (
 		<div className="article_page">
+			
+			{/* SEO COMPONENT */}
+			<Seo 
+				title={post.Titre ?? "Untilted"}
+				description={post.Description?.slice(0, 155) ?? "Article Untilted du blog de Didier Arnaud"}
+				url={`/aritcles/${post.id}`}
+				type="articles"
+			/>
+			
 			<div className="back_link">
 				<Link to="/">← Retour</Link>
 			</div>
