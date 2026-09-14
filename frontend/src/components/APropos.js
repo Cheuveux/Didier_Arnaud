@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
+import Seo from './SEO/SEO';
 import './a_propos.css'
 
 function renderBlocks(blocks) {
@@ -57,12 +58,19 @@ export default function APropos() {
 			.then(json => setData(json.data[0]));
 	}, []);
 
-	// if (!data)
-	// 	return <p>Chargement...</p>
 	if (!data)
 		return <p>Édition en cours...</p>
 	return (
 		<div className='a-propos'>
+      
+      {/* SEO COMPONENT */}
+      <Seo 
+        title="Page A-Propos de l'auteur"
+        description={data.Description?.slice(0, 155) ?? "Description de la vie et de l'activité journalistique de Didier Arnaud"}
+        url="https://www.didier-arnaud.fr/a_proposs"
+        type="a-propos"
+      />
+      
 			<div className='returnBtn'>
 			<Link to='/'>← Retour</Link>
 			</div>
