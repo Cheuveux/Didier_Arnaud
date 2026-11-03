@@ -1,3 +1,7 @@
+:root {
+  --font-body: 'Isenheim', serif;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -10,7 +14,7 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  font-family: var(--font-body, 'Lora', serif);
+  font-family: var(--font-body);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,7 +39,8 @@ body::before {
 }
 
 body.home-bg::before,
-body.sommaire-bg::before {
+body.sommaire-bg::before,
+body.about-bg::before {
   background-image:
     repeating-linear-gradient(
       0deg,
@@ -61,6 +66,11 @@ body.sommaire-bg {
 
 body.blur-bg::before {
   filter: blur(2px) brightness(0.82) saturate(0.9);
+}
+
+body.article-page-bg::before {
+  opacity: 0.18;
+  filter: blur(1px) brightness(1.08) saturate(0.55);
 }
 
 code {

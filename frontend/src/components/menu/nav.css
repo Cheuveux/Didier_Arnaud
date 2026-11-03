@@ -37,7 +37,7 @@
 }
 
 .categories-nav li:hover {
-  box-shadow: inset 0 -3px 0 0 rgb(126, 148, 148);
+  box-shadow: inset 0 -3px 0 0 rgb(65, 114, 57);
   background-color: rgba(115, 130, 130, 0.2);
   backdrop-filter: blur(0px);
 }
@@ -55,13 +55,13 @@
 }
 
 .categories-nav a:hover {
-  text-shadow: 1px 1px 0px rgb(86, 172, 172);
-  color:  rgb(144, 169, 169);
+  text-shadow: 1px 1px 0px rgb(65, 114, 57);
+  color: rgb(65, 114, 57);
 }
 
 
 .categories-nav a.active {
-  color: rgb(136, 201, 201);
+  color: rgb(65, 114, 57);
 }
 
 

@@ -10,6 +10,7 @@ export function Nav() {
 	const {categories, loading} = useCategories()
 	const {pathname} = useLocation()
 	const isOnCategoryPage = pathname.startsWith('/categorie/')
+	const decodedPathname = decodeURIComponent(pathname)
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 	const drawerItemsRef = useRef([])
 	const drawerRef = useRef(null)
@@ -64,8 +65,8 @@ export function Nav() {
 					{categories.map(cat => (
 						<li key={cat.id}>
 							<Link
-								to={`/categorie/${cat.name}`}
-								className={pathname === `/categorie/${cat.name}` ? 'active' : ''}
+								to={`/categorie/${encodeURIComponent(cat.name)}`}
+								className={decodedPathname === `/categorie/${cat.name}` ? 'active' : ''}
 							>
 								{cat.name}
 							</Link>
@@ -111,8 +112,8 @@ export function Nav() {
 						{categories.map((cat, i) => (
 							<li key={cat.id} ref={(el) => (drawerItemsRef.current[isOnCategoryPage ? i + 1 : i] = el)}>
 								<Link
-									to={`/categorie/${cat.name}`}
-									className={pathname === `/categorie/${cat.name}` ? 'active' : ''}
+									to={`/categorie/${encodeURIComponent(cat.name)}`}
+									className={decodedPathname === `/categorie/${cat.name}` ? 'active' : ''}
 									onClick={closeDrawer}
 								>
 									{cat.name}

@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Seo from './SEO/SEO';
+import { defaultBackground } from '../categoryBackgrounds';
 import './a_propos.css'
 
 function renderBlocks(blocks) {
@@ -46,9 +47,13 @@ export default function APropos() {
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
-		document.body.classList.add("blur-bg");
+		document.body.classList.remove("blur-bg");
+		document.body.classList.add("about-bg");
+		document.body.style.setProperty('--bg-image', 'none');
+
 		return () => {
-			document.body.classList.remove("blur-bg");
+			document.body.classList.remove("about-bg");
+			document.body.style.setProperty('--bg-image', `url(${defaultBackground})`);
 		};
 	}, []);
 

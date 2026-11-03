@@ -4,13 +4,12 @@
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-  --font-body: 'Lora', serif;
   --font-title: 'Poppins', sans-serif;
   --font-weight-body: 400;
   --font-weight-body-bold: 600;
   --font-weight-title: 900;
   --font-weight-title-secondary: 800;
-  --bg-article-card: rgba(255, 255, 255, 0.521);
+  --bg-article-card: rgba(208, 208, 208, 0.521);
   --title-grey-color: rgba(0, 0, 0, 0.525); 
 }
 .App {

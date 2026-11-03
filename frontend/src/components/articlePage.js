@@ -62,8 +62,10 @@ export default function ArticlePage() {
 	// Ajouter le blur sur les pages d'articles
 	useEffect(() => {
 		document.body.classList.add("blur-bg");
+		document.body.classList.add("article-page-bg");
 		return () => {
 			document.body.classList.remove("blur-bg");
+			document.body.classList.remove("article-page-bg");
 		};
 	}, []);
 
