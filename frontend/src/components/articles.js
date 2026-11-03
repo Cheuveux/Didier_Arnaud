@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { Nav } from './menu/nav';
 import { defaultBackground } from '../categoryBackgrounds';
+import { trimDescription } from '../utils/trimDescription';
 import './articles.css';
 
 export default function Article()
@@ -103,7 +104,10 @@ export default function Article()
 					<p className="article_date">{post.Date}</p>
 				</div>
 				<div className="article_desc">
-					<p className="text_article_desc">{post.Description}</p>
+					<p className="text_article_desc">
+						<span className="desktop-description">{post.Description}</span>
+						<span className="mobile-description">{trimDescription(post.Description)}</span>
+					</p>
 				</div>
 			</div>
         </Link>

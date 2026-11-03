@@ -8,6 +8,7 @@ import {
 import './categoryPage.css'
 import '../articles.css'
 import gsap from "gsap";  // Ajouter l'import
+import { trimDescription } from '../../utils/trimDescription'
 
 export function CategoryPage() {
   const { slug } = useParams()
@@ -133,7 +134,10 @@ export function CategoryPage() {
                     ) : (
                       <div className="img_article_spacer"></div>
                     )}
-                    <p className="text_article_desc">{article.Description}</p>
+                    <p className="text_article_desc">
+                      <span className="desktop-description">{article.Description}</span>
+                      <span className="mobile-description">{trimDescription(article.Description)}</span>
+                    </p>
                   </div>
                 </div>
               </Link>
