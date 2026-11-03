@@ -1,24 +1,13 @@
 import { useEffect, useState, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Nav } from './nav'
-import backgroundMountain from '../../assets/background_mountain.png'
-import snowBg from '../../assets/snow.png'
-import voyage_bg from '../../assets/voyage_bg.png'
-import jazz_bg from '../../assets/jazz_bg.png'
-import aucun_lien from '../../assets/aucun_lien_bg.gif'
+import {
+  defaultBackground,
+  getBackgroundForCategory,
+} from '../../categoryBackgrounds'
 import './categoryPage.css'
 import '../articles.css'
 import gsap from "gsap";  // Ajouter l'import
-
-// Map category names to background images
-const categoryBackgrounds = {
-  'mountain': backgroundMountain,
-  'snow': snowBg,
-  'voyage': voyage_bg,
-  'jazz' : jazz_bg,
-  'aucun lien': aucun_lien,
-  'default': backgroundMountain
-}
 
 export function CategoryPage() {
   const { slug } = useParams()
@@ -62,7 +51,7 @@ export function CategoryPage() {
 
   useEffect(() => {
     // Set background image for body::before based on category slug
-    const bg = categoryBackgrounds[slug.toLowerCase()] || categoryBackgrounds.default
+    const bg = getBackgroundForCategory(slug)
     document.body.style.setProperty('--bg-image', `url(${bg})`)
 
     // Filtre les articles par name de catégorie
@@ -91,7 +80,7 @@ export function CategoryPage() {
   // Restore default background when leaving category page
   useEffect(() => {
     return () => {
-      document.body.style.setProperty('--bg-image', `url(${categoryBackgrounds.default})`)
+      document.body.style.setProperty('--bg-image', `url(${defaultBackground})`)
     }
   }, [])
 

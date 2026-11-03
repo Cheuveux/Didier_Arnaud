@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { Nav } from '../menu/nav';
+import { defaultBackground } from '../../categoryBackgrounds';
 import './sommaire.css';
 
 export function Sommaire()
@@ -10,6 +11,16 @@ export function Sommaire()
 	const [posts, setPosts] = useState([]);
 	const [error, setError] = useState(null);
 	const cardRefs = useRef([]);
+
+	useEffect(() => {
+		document.body.classList.add("sommaire-bg");
+		document.body.style.setProperty('--bg-image', 'none');
+
+		return () => {
+			document.body.classList.remove("sommaire-bg");
+			document.body.style.setProperty('--bg-image', `url(${defaultBackground})`);
+		};
+	}, []);
 
 	useEffect(() => {
 	

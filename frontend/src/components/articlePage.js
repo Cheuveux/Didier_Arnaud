@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ShareButton } from "./ShareButton";
 import Seo from "./SEO/SEO";
+import { getBackgroundForCategory } from "../categoryBackgrounds";
 import './articlePage.css';
 
 function renderTextWithFootnoteLinks(text, blockIndex, childIndex) {
@@ -78,7 +79,12 @@ export default function ArticlePage() {
 				return res.json();
 			})
 			.then((data) => {
-				setPost(data.data);
+				const article = data.data;
+				setPost(article);
+				document.body.style.setProperty(
+					'--bg-image',
+					`url(${getBackgroundForCategory(article.category?.Name || article.category?.name)})`
+				);
 				setIsLoading(false);
 			})
 			.catch((err) => {

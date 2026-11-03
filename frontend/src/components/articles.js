@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { Nav } from './menu/nav';
+import { defaultBackground } from '../categoryBackgrounds';
 import './articles.css';
 
 export default function Article()
@@ -14,6 +15,13 @@ export default function Article()
 	// Retirer le blur au chargement de la page d'accueil
 	useEffect(() => {
 		document.body.classList.remove("blur-bg");
+		document.body.classList.add("home-bg");
+		document.body.style.setProperty('--bg-image', 'none');
+
+		return () => {
+			document.body.classList.remove("home-bg");
+			document.body.style.setProperty('--bg-image', `url(${defaultBackground})`);
+		};
 	}, []);
 
 	// GSAP hover animations - only on screens larger than 750px
@@ -95,16 +103,6 @@ export default function Article()
 					<p className="article_date">{post.Date}</p>
 				</div>
 				<div className="article_desc">
-					{post.Image?.[0]?.url ? (
-						<img
-							className="img_article_desc"
-							src={`${process.env.REACT_APP_API_URL}${post.Image[0].url}`}
-							alt="Illustration descriptive de l'article"
-							loading = "lazy"
-						/>
-					) : (
-						<div className="img_article_spacer"></div>
-					)}
 					<p className="text_article_desc">{post.Description}</p>
 				</div>
 			</div>
