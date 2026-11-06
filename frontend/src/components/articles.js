@@ -105,8 +105,7 @@ export default function Article()
 				</div>
 				<div className="article_desc">
 					<p className="text_article_desc">
-						<span className="desktop-description">{post.Description}</span>
-						<span className="mobile-description">{trimDescription(post.Description)}</span>
+						{trimDescription(post.Description)}
 					</p>
 				</div>
 			</div>

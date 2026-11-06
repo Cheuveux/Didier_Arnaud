@@ -135,8 +135,7 @@ export function CategoryPage() {
                       <div className="img_article_spacer"></div>
                     )}
                     <p className="text_article_desc">
-                      <span className="desktop-description">{article.Description}</span>
-                      <span className="mobile-description">{trimDescription(article.Description)}</span>
+                      {trimDescription(article.Description)}
                     </p>
                   </div>
                 </div>

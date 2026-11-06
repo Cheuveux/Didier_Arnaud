@@ -212,11 +212,6 @@
   max-width: 80%;
 }
 
-.mobile-description {
-  display: none;
-}
-
-
 @media screen and (max-width: 1050px) {
   .article_box {
     grid-template-columns: 1fr;
@@ -290,14 +285,6 @@
 }
 
 @media screen and (max-width: 750px) {
-  .desktop-description {
-    display: none;
-  }
-
-  .mobile-description {
-    display: inline;
-  }
-
   .article_card.featured .article_title {
     font-size: 1.5rem;
     margin-bottom: 0.3rem;
