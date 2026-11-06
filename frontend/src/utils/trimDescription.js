@@ -1,4 +1,6 @@
-export function trimDescription(description, maxLength = 140) {
+const isMobile = window.innerWidth <= 750;
+
+export function trimDescription(description, maxLength = isMobile ? 110 : 140) {
   const text = typeof description === 'string' ? description.trim() : '';
 
   if (text.length <= maxLength) return text;

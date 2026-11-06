@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import BackLink from "../utils/backLink";
 import { ShareButton } from "./ShareButton";
 import Seo from "./SEO/SEO";
 import { getBackgroundForCategory } from "../categoryBackgrounds";
@@ -110,9 +111,7 @@ export default function ArticlePage() {
 				type="articles"
 			/>
 			
-			<div className="back_link">
-				<Link to="/">← Retour</Link>
-			</div>
+			<BackLink />
 			<div className="article_page_header">
 				<h1 className="article_page_title">{post.Titre}</h1>
 			<div className="article_page_meta">

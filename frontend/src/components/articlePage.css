@@ -25,14 +25,19 @@
   padding: 0 1.5rem;
 }
 
-.back_link a {
-	text-decoration: none;
-	font-weight: 700;
-	color: rgba(0, 0, 0, 0.806);
-	border-bottom: black 1px dotted;
+.back_link button {
+  appearance: none;
+  border: 0;
+  border-bottom: black 1px dotted;
+  padding: 0;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.806);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.back_link:hover {
+.back_link button:hover {
   color: black;
 }
 
@@ -171,4 +176,3 @@
     font-size: 12px;
   }
 }
-

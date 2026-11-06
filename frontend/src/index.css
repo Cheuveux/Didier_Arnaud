@@ -2,6 +2,24 @@
   --font-body: 'Isenheim', serif;
 }
 
+@property --grid-line-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: rgba(106, 106, 106, 0.18);
+}
+
+@property --grid-soft-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: rgba(106, 106, 106, 0.19);
+}
+
+@property --grid-diagonal-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: rgba(106, 106, 106, 0.25);
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -18,7 +36,7 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(52, 48, 42, 0.409);
+  background-color: rgba(166, 165, 165, 0.409);
   position: relative;
 }
 
@@ -44,22 +62,99 @@ body.about-bg::before {
   background-image:
     repeating-linear-gradient(
       0deg,
-      rgba(52, 48, 42, 0.035) 0,
-      rgba(52, 48, 42, 0.035) 1px,
+      var(--grid-line-color) 0,
+      var(--grid-line-color) 1px,
       transparent 1px,
-      transparent 4px
+      transparent 45px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.12) 0,
-      rgba(255, 255, 255, 0.12) 1px,
+      var(--grid-line-color) 0,
+      var(--grid-line-color) 1px,
       transparent 1px,
-      transparent 5px
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      35deg,
+      transparent 0,
+      transparent 135px,
+      var(--grid-diagonal-color) 136px,
+      var(--grid-diagonal-color) 137px,
+      transparent 138px,
+      transparent 270px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--grid-soft-color) 0,
+      var(--grid-soft-color) 1px,
+      transparent 1px,
+      transparent 280px
     );
-  background-size: auto;
+  background-size: 90px 90px, 90px 90px, auto, 180px 180px;
+  animation: moveGreenGrids 19s ease-in-out infinite;
   opacity: 0.75;
 }
 
+@keyframes moveGreenGrids {
+  0% {
+    --grid-line-color: rgba(115, 115, 115, 0.12);
+    --grid-soft-color:rgba(115, 115, 115, 0.12);
+    --grid-diagonal-color: rgba(115, 115, 115, 0.12);
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  23% {
+    --grid-line-color: rgba(115, 115, 115, 0.12);
+    --grid-soft-color: rgba(80, 135, 95, 0.12);
+    --grid-diagonal-color: rgba(130, 180, 145, 0.08);
+    background-position:
+      18px 10px,
+      10px 18px,
+      -24px 16px,
+      18px -12px;
+  }
+  50% {
+    --grid-line-color: rgba(115, 115, 115, 0.12);
+    --grid-soft-color: rgba(100, 155, 110, 0.08);
+    --grid-diagonal-color: rgba(150, 195, 160, 0.06);
+    background-position:
+      30px 22px,
+      22px 30px,
+      -42px 28px,
+      30px -20px;
+  }
+  76% {
+    --grid-line-color: rgba(115, 115, 115, 0.12);
+    --grid-soft-color: rgba(70, 130, 85, 0.1);
+    --grid-diagonal-color: rgba(115, 170, 130, 0.07);
+    background-position:
+      12px 28px,
+      28px 12px,
+      -18px 42px,
+      -16px 24px;
+  }
+  100% {
+    --grid-line-color: rgba(115, 115, 115, 0.52);
+    --grid-soft-color: rgba(80, 120, 90, 0.06);
+    --grid-diagonal-color: rgba(130, 170, 140, 0.04);
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.home-bg::before,
+  body.sommaire-bg::before,
+  body.about-bg::before {
+    animation: none;
+  }
+}
 body.sommaire-bg {
   background-color: #dfe6e2;
 }

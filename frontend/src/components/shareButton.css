@@ -15,8 +15,8 @@
 }
 
 .share-button:hover {
-  border-color: rgb(86, 172, 172);
-  color: rgb(86, 172, 172);
+  border-color: var(--hover-color);
+  color: var(--hover-color);
   background-color: rgba(86, 172, 172, 0.05);
   box-shadow: 0 2px 8px rgba(86, 172, 172, 0.15);
 }

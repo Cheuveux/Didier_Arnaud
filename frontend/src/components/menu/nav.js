@@ -10,6 +10,7 @@ export function Nav() {
 	const {categories, loading} = useCategories()
 	const {pathname} = useLocation()
 	const isOnCategoryPage = pathname.startsWith('/categorie/')
+	const isOnSommaryPage = pathname.startsWith('/sommaire')
 	const decodedPathname = decodeURIComponent(pathname)
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 	const drawerItemsRef = useRef([])
@@ -55,10 +56,10 @@ export function Nav() {
 					<span></span>
 				) : (
 					<ul>
-						{isOnCategoryPage && (
+						{(isOnCategoryPage || isOnSommaryPage) && (
 							<li>
 								<Link className="category-btn-return" to="/">
-									← Retour
+									← home
 								</Link>
 							</li>
 						)}
@@ -102,10 +103,10 @@ export function Nav() {
 						<span></span>
 					) : (
 						<ul>
-							{isOnCategoryPage && (
+							{(isOnCategoryPage || isOnSommaryPage) && (
 								<li ref={(el) => (drawerItemsRef.current[0] = el)}>
 									<Link className="category-btn-return" to="/" onClick={closeDrawer}>
-										← Retour
+										← home
 									</Link>
 								</li>
 							)}
